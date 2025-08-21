@@ -1,0 +1,5 @@
+/* src/styles/common.css */
+:root { --green: #3a7c5b; }
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+a { color: var(--green); }
