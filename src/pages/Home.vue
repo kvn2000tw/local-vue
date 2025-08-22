@@ -3,118 +3,23 @@
   <div>
     <NavBar />
 
+ <LayoutContainer>
     <CardSection />
 
-    <section class="section-container">
-         <div class="main-button-group">
-        <a href="#" class="main-btn" :class="{ active: activeTab==='person' }" @click.prevent="activeTab='person'">人物專訪</a>
-        <a href="#" class="main-btn" :class="{ active: activeTab==='partner' }" @click.prevent="activeTab='partner'">社區夥伴</a>
-        <a href="#" class="main-btn" :class="{ active: activeTab==='talent' }" @click.prevent="activeTab='talent'">人才師資庫</a>
-      </div>
-    </section>
     <!-- 內容顯示區域 -->
-    <div class="content-area" :class="{ active: true }">
-      <h3>{{ currentTitle }}</h3>
-
-      <!-- 人物專訪 -->
-      <div v-if="activeTab==='person'" class="content-placeholder person-interview">
-        <h4>在地人物故事</h4>
-        <p>深入訪談在地重要人物，了解他們的故事與貢獻。</p>
-        <div class="interview-cards">
-          <article class="interview-card" @click="openLink('人物專訪/冷水坑溪.html')">
-            <div class="card-image">
-              <img :src="image1" alt="冷水坑溪" />
-            </div>
-            <div class="card-content">
-              <h5>冷水坑溪</h5>
-              <p>探索冷水坑溪流域的在地人物故事，了解他們與水資源的深厚連結。</p>
-              <div class="card-tags">
-                <span class="tag">水資源</span>
-                <span class="tag">在地故事</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="interview-card" @click="openLink('https://example.com/cold-water-creek')">
-            <div class="card-image">
-              <img src="https://via.placeholder.com/200x150/3a7c5b/ffffff?text=眷村採訪" alt="眷村採訪" />
-            </div>
-            <div class="card-content">
-              <h5>眷村採訪</h5>
-              <p>深入眷村文化，採訪在地居民，記錄珍貴的歷史記憶與生活故事。</p>
-              <div class="card-tags">
-                <span class="tag">文化傳承</span>
-                <span class="tag">歷史記憶</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="interview-card" @click="openLink('https://example.com/cold-water-creek')">
-            <div class="card-image">
-              <img src="https://via.placeholder.com/200x150/3a7c5b/ffffff?text=南港採訪" alt="南港採訪" />
-            </div>
-            <div class="card-content">
-              <h5>南港採訪</h5>
-              <p>走訪南港地區，採訪在地人物，了解南港的發展歷程與文化特色。</p>
-              <div class="card-tags">
-                <span class="tag">地方發展</span>
-                <span class="tag">文化特色</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- 社區夥伴 -->
-      <div v-else-if="activeTab==='partner'" class="content-placeholder community-partners">
-        <h4>合作夥伴網絡</h4>
-        <p>與我們一起推動地方發展的重要夥伴。</p>
-        <div class="partner-cards">
-          <article class="partner-card" v-for="(p, i) in partners" :key="i">
-            <div class="card-image">
-              <img :src="p.img" :alt="p.title" />
-            </div>
-            <div class="card-content">
-              <h5>{{ p.title }}</h5>
-              <p>{{ p.desc }}</p>
-              <div class="card-tags">
-                <span v-for="(t, ti) in p.tags" :key="ti" class="tag">{{ t }}</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- 人才師資庫 -->
-      <div v-else class="content-placeholder talent-pool">
-        <h4>專業師資陣容</h4>
-        <p>匯集各領域專業人才，提供優質的學習資源。</p>
-        <div class="talent-cards">
-          <article class="talent-card" v-for="(t, i) in talents" :key="i">
-            <div class="card-image">
-              <img :src="t.img" :alt="t.title" />
-            </div>
-            <div class="card-content">
-              <h5>{{ t.title }}</h5>
-              <p>{{ t.desc }}</p>
-              <div class="card-tags">
-                <span v-for="(tg, gi) in t.tags" :key="gi" class="tag">{{ tg }}</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
+    <LocalKnowledge />
 
     <!-- 底部卡片區域 -->
     <CardSection style="margin-top: 40px; padding-bottom: 40px;" />
-
+  </LayoutContainer>
      <AppFooter />
   </div>
 </template>
 
 <script setup>
 import NavBar from '@/components/NavBar.vue'
+import LayoutContainer from "@/components/LayoutContainer.vue";
+import LocalKnowledge from "@/components/LocalKnowledge.vue";
 import CardSection from '@/components/CardSection.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import { ref, computed } from 'vue'
@@ -250,64 +155,8 @@ const currentTitle = computed(() => {
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
-    .content-area {
-     /*display: none;*/
-      max-width: 800px;
-      margin: 0 auto 30px;
-      padding: 30px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      clear: both;
-    }
-    .content-area.active {
-      display: block;
-    }
-    .content-area h4 {
-      color: #3a7c5b;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .content-area ul {
-      list-style: none;
-      padding: 0;
-    }
-    .content-area ul li {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-      color: #555;
-    }
-    .content-area ul li:last-child {
-      border-bottom: none;
-    }
+ 
 
 /* 卡片樣式（共用） */
-.interview-cards, .partner-cards, .talent-cards {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;
-}
-.interview-card, .partner-card, .talent-card {
-  background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
-}
-.interview-card:hover, .partner-card:hover, .talent-card:hover {
-  transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-.card-image { width: 100%; height: 200px; overflow: hidden; }
-.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; display: block; }
-.interview-card:hover .card-image img, .partner-card:hover .card-image img, .talent-card:hover .card-image img { transform: scale(1.05); }
-.card-content { padding: 20px; }
-.card-content h5 { color: var(--green); font-size: 18px; margin: 0 0 10px 0; font-weight: bold; }
-.card-content p { color: #555; line-height: 1.6; margin: 0 0 15px 0; font-size: 14px; }
-.card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag { background-color: #e8f5e8; color: var(--green); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
-
-@media (max-width: 768px) {
-  .interview-cards, .partner-cards, .talent-cards { grid-template-columns: 1fr; }
-}
-
 
 </style>
