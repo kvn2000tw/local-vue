@@ -1,12 +1,24 @@
-<!-- src/pages/WalkingTour.vue -->
+<!-- src/pages/CommunityHub.vue -->
 <template>
-  <div class="page">
-    <h2>走讀新竹</h2>
-    <p>山林系列、水資源系列（此頁為範例占位）。</p>
-    <RouterLink to="/">← 回到首頁</RouterLink>
-  </div>
+   
+ <LayoutContainer>
+   
+    <!-- 內容顯示區域 -->
+    <WalkingTour />
+    <WalkingTourArea />
+
+  </LayoutContainer>
 </template>
-<script setup></script>
-<style scoped>
-.page { padding: 16px; }
+
+<script setup>
+
+import LayoutContainer from "@/components/LayoutContainer.vue";
+import WalkingTour from "@/components/WalkingTour.vue";
+import WalkingTourArea from "@/components/WalkingTourArea.vue";
+
+</script>
+
+<style scoped> 
+/* 卡片樣式（共用） */
+
 </style>
