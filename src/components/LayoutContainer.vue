@@ -4,7 +4,7 @@
     <NavBar />
 
   <div class="layout-container">
-
+<slot name="slot2" />
     <CardSection />
 
     <slot />
