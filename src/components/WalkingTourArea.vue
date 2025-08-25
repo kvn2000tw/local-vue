@@ -29,14 +29,14 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-import DongQu from './DongQu.vue'
+import EastArea from './EastArea.vue'
 import XiangShan from './XiangShan.vue'
-import BeiQu from './BeiQu.vue'
+import NorthArea from './NorthArea.vue'
 
 const tabs = [
-  { key: 'dongqu', label: '東區', component: DongQu },
+  { key: 'dongqu', label: '東區', component: EastArea },
   { key: 'xiangshan', label: '香山區', component: XiangShan },
-  { key: 'beiqu', label: '北區', component: BeiQu },
+  { key: 'beiqu', label: '北區', component: NorthArea },
 ]
 
 const activeTab = ref('dongqu')
@@ -104,8 +104,9 @@ onMounted(() => {
   transform: translateY(-1px);
 }
 .main-btn.selected {
-  background: #dcfce7;
+  background: #3a7c5b;
   border-color: var(--primary);
+  color: #fff; /* ✅ 讓字變白色 */
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
 }
 .main-btn:focus-visible {
@@ -131,17 +132,5 @@ onMounted(() => {
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.4s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
 
 </style>
