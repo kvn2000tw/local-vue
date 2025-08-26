@@ -1,0 +1,35 @@
+/* Tab18Jianshan.css */
+
+/* 卡片樣式（共用） */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三欄 */
+    gap: 10px;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 20px; /* 左右各 20px */
+    box-sizing: border-box; /* 讓 padding 不影響 max-width */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+    box-sizing: border-box; /* 確保不影響排版 */
+}
+
+h3 {
+    margin-top: 16px;
+    color: #444;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}

@@ -9,12 +9,12 @@
     <h3>活動照片</h3>
   </div>
     <div class="gallery">
-        <img src="@/assets/img/2024-08-23/001.jpg" alt="辨識植物探索1">
-        <img src="@/assets/img/2024-08-23/002.jpg" alt="辨識植物探索2">
-        <img src="@/assets/img/2024-08-23/003.jpg" alt="辨識植物探索3">
-        <img src="@/assets/img/2024-08-23/004.jpg" alt="辨識植物探索4">
-        <img src="@/assets/img/2024-08-23/005.jpg" alt="辨識植物探索5">
-        <img src="@/assets/img/2024-08-23/006.jpg" alt="辨識植物探索6">
+        <img src="/img/2024-08-23/001.jpg" alt="辨識植物探索1">
+        <img src="/img/2024-08-23/002.jpg" alt="辨識植物探索2">
+        <img src="/img/2024-08-23/003.jpg" alt="辨識植物探索3">
+        <img src="/img/2024-08-23/004.jpg" alt="辨識植物探索4">
+        <img src="/img/2024-08-23/005.jpg" alt="辨識植物探索5">
+        <img src="/img/2024-08-23/006.jpg" alt="辨識植物探索6">
       
     </div>
 
@@ -22,31 +22,5 @@
 </template>
 
 <script setup>
-
+import './Common.css'
 </script>
-
-<style scoped> 
-/* 卡片樣式（共用） */
-       .gallery {
-             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 三欄 */
-            gap: 10px;
-            max-width: 100%;
-            margin: 20px auto;
-            padding: 0 20px; /* 左右各 20px */
-            box-sizing: border-box; /* 讓 padding 不影響 max-width */
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 2px solid #ccc;
-        }
-        h2 {
-            color: #333;
-            margin-top: 20px;
-         
-        box-sizing: border-box; /* 確保不影響排版 */
-        }
-
-</style>

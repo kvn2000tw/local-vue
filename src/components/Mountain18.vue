@@ -31,6 +31,7 @@
 import { ref, computed } from 'vue'
 
 // 匯入各個子元件
+import Mountain20221122 from './contents/Mountain20221122.vue'
 import Mountain20240724 from './contents/Mountain20240724.vue'
 import Mountain20240804 from './contents/Mountain20240804.vue'
 import Mountain20240823 from './contents/Mountain20240823.vue'
@@ -46,6 +47,13 @@ function goBack() {
 }
 // 卡片資料表：id 與對應元件
 const cards = [
+    {
+    id: 'mountain20221122',
+    img: '/img/2022-11-22/001.jpeg',
+    title: '十八尖山山林教育系列',
+    desc: '使用健走杖健走活動',
+    component: Mountain20221122
+  },
   {
     id: 'mountain20240724',
     img: '/img/2024-07-04/004.jpg',
