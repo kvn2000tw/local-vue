@@ -24,17 +24,20 @@
 </template>
 
 <script>
+import { getCurrentInstance } from 'vue'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
+
 export default {
   name: "PhotoGallery",
   data() {
     return {
       photos: [
-        { src: "/img/2024-05-04/001.jpg", alt: "走訪冷水坑溪寺廟之旅" },
-        { src: "/img/2024-05-04/002.jpg", alt: "走訪冷水坑溪寺廟之旅" },
-        { src: "/img/2024-05-04/003.jpg", alt: "走訪冷水坑溪寺廟之旅" },
-        { src: "/img/2024-05-04/004.jpg", alt: "走訪冷水坑溪寺廟之旅" },
-        { src: "/img/2024-05-04/005.jpg", alt: "走訪冷水坑溪寺廟之旅" },
-        { src: "/img/2024-05-04/006.jpg", alt: "走訪冷水坑溪寺廟之旅" },
+        { src: `${imgBase}/img/2024-05-04/001.jpg`, alt: "走訪冷水坑溪寺廟之旅" },
+        { src: `${imgBase}/img/2024-05-04/002.jpg`, alt: "走訪冷水坑溪寺廟之旅" },
+        { src: `${imgBase}/img/2024-05-04/003.jpg`, alt: "走訪冷水坑溪寺廟之旅" },
+        { src: `${imgBase}/img/2024-05-04/004.jpg`, alt: "走訪冷水坑溪寺廟之旅" },
+        { src: `${imgBase}/img/2024-05-04/005.jpg`, alt: "走訪冷水坑溪寺廟之旅" },
+        { src: `${imgBase}/img/2024-05-04/006.jpg`, alt: "走訪冷水坑溪寺廟之旅" },
       ],
     };
   },

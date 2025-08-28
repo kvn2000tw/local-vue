@@ -45,17 +45,17 @@
 
 <!-- 第一排：4 張 -->
 <div class="photo-row">
-  <div class="photo-col"><img src="/img/2022-06-02/001.jpg" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img src="/img/2022-06-02/007.jpg" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img src="/img/2022-06-02/003.jpg" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img src="/img/2022-06-02/002.jpg" alt="探訪冷水坑溪"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/001.jpg`" alt="探訪冷水坑溪"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/007.jpg`" alt="探訪冷水坑溪"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/003.jpg`" alt="探訪冷水坑溪"></div>
 </div>
 
 <!-- 第二排：3 張 -->
 <div class="photo-row">
-  <div class="photo-col"><img src="/img/2022-06-02/004.jpg" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img src="/img/2022-06-02/005.jpg" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img src="/img/2022-06-02/006.jpg" alt="探訪冷水坑溪"></div>
+ 
+  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/004.jpg`" alt="探訪冷水坑溪"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/005.jpg`" alt="探訪冷水坑溪"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/006.jpg`" alt="探訪冷水坑溪"></div>
 </div>
 
 
@@ -63,7 +63,9 @@
 </div>
 </template>
 <script setup>
-
+import { getCurrentInstance } from 'vue'
+import './Common.css'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 </script>
 <style>
 .title {

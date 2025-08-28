@@ -9,12 +9,12 @@
     <h3>活動照片</h3>
   </div>
     <div class="gallery">
-        <img src="/img/2024-08-04/001.jpg" alt="探勘篇1">
-        <img src="/img/2024-08-04/002.jpg" alt="探勘篇2">
-        <img src="/img/2024-08-04/003.jpg" alt="探勘篇3">
-        <img src="/img/2024-08-04/004.jpg" alt="探勘篇4">
-        <img src="/img/2024-08-04/005.jpg" alt="探勘篇5">
-        <img src="/img/2024-08-04/006.jpg" alt="探勘篇6">
+       <img :src="`${imgBase}/img/2024-08-04/001.jpg`" alt="探勘篇1">
+       <img :src="`${imgBase}/img/2024-08-04/002.jpg`" alt="探勘篇2">
+       <img :src="`${imgBase}/img/2024-08-04/003.jpg`" alt="探勘篇3">
+       <img :src="`${imgBase}/img/2024-08-04/004.jpg`" alt="探勘篇4">
+       <img :src="`${imgBase}/img/2024-08-04/005.jpg`" alt="探勘篇5">
+       <img :src="`${imgBase}/img/2024-08-04/006.jpg`" alt="探勘篇6">
       
     </div>
 
@@ -22,5 +22,8 @@
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue'
 import './Common.css'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
+
 </script>

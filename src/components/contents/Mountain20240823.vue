@@ -9,18 +9,19 @@
     <h3>活動照片</h3>
   </div>
     <div class="gallery">
-        <img src="/img/2024-08-23/001.jpg" alt="辨識植物探索1">
-        <img src="/img/2024-08-23/002.jpg" alt="辨識植物探索2">
-        <img src="/img/2024-08-23/003.jpg" alt="辨識植物探索3">
-        <img src="/img/2024-08-23/004.jpg" alt="辨識植物探索4">
-        <img src="/img/2024-08-23/005.jpg" alt="辨識植物探索5">
-        <img src="/img/2024-08-23/006.jpg" alt="辨識植物探索6">
-      
-    </div>
+      <img :src="`${imgBase}/img/2024-08-23/001.jpg`" alt="辨識植物探索1">
+      <img :src="`${imgBase}/img/2024-08-23/002.jpg`" alt="辨識植物探索2">
+      <img :src="`${imgBase}/img/2024-08-23/003.jpg`" alt="辨識植物探索3">
+      <img :src="`${imgBase}/img/2024-08-23/004.jpg`" alt="辨識植物探索4">
+      <img :src="`${imgBase}/img/2024-08-23/005.jpg`" alt="辨識植物探索5">
+      <img :src="`${imgBase}/img/2024-08-23/006.jpg`" alt="辨識植物探索6">
 
+    </div>
 
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue'
 import './Common.css'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 </script>

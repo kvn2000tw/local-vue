@@ -46,37 +46,41 @@
 </div>
 </template>
 <script setup>
+import { getCurrentInstance } from 'vue'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
+
 const images = [
   // 第一排
-  '/img/2022-11-10/001.jpg',
-  '/img/2022-11-10/002.png',
-  '/img/2022-11-10/003.jpg',
-  '/img/2022-11-10/004.jpg',
+  `${imgBase}/img/2022-11-10/001.jpg`,
+  `${imgBase}/img/2022-11-10/002.png`,
+  `${imgBase}/img/2022-11-10/003.jpg`,
+  `${imgBase}/img/2022-11-10/004.jpg`,
 
   // 第二排
-  '/img/2022-11-10/005.jpg',
-  '/img/2022-11-10/006.jpg',
-  '/img/2022-11-10/007.jpg',
-  '/img/2022-11-10/008.jpg',
+  `${imgBase}/img/2022-11-10/005.jpg`,
+  `${imgBase}/img/2022-11-10/006.jpg`,
+  `${imgBase}/img/2022-11-10/007.jpg`,
+  `${imgBase}/img/2022-11-10/008.jpg`,
 
   // 第三排
-  '/img/2022-11-10/009.jpg',
-  '/img/2022-11-10/010.jpg',
-  '/img/2022-11-10/011.jpg',
-  '/img/2022-11-10/012.jpg',
+  `${imgBase}/img/2022-11-10/009.jpg`,
+  `${imgBase}/img/2022-11-10/010.jpg`,
+  `${imgBase}/img/2022-11-10/011.jpg`,
+  `${imgBase}/img/2022-11-10/012.jpg`,
 
   // 第四排
-  '/img/2022-11-10/013.jpg',
-  '/img/2022-11-10/014.png',
-  '/img/2022-11-10/015.png',
-  '/img/2022-11-10/016.png',
+  `${imgBase}/img/2022-11-10/013.jpg`,
+  `${imgBase}/img/2022-11-10/014.png`,
+  `${imgBase}/img/2022-11-10/015.png`,
+  `${imgBase}/img/2022-11-10/016.png`,
 
   // 第五排
-  '/img/2022-11-10/017.png',
-  '/img/2022-11-10/018.png',
-  '/img/2022-11-10/019.jpg',
-  '/img/2022-11-10/020.jpg',
+  `${imgBase}/img/2022-11-10/017.png`,
+  `${imgBase}/img/2022-11-10/018.png`,
+  `${imgBase}/img/2022-11-10/019.jpg`,
+  `${imgBase}/img/2022-11-10/020.jpg`,
 ]
+
 </script>
 <style scoped>
 .photo-row {

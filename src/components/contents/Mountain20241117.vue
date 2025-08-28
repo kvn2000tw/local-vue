@@ -20,19 +20,22 @@
  <h3>活動照片</h3>
   </div>
     <div class="gallery">
-        <img src="/img/2024-11-17/001.jpg" alt="藝術篇1">
-        <img src="/img/2024-11-17/002.jpg" alt="藝術篇2">
-        <img src="/img/2024-11-17/003.jpg" alt="藝術篇3">
-        <img src="/img/2024-11-17/004.jpg" alt="藝術篇4">
-        <img src="/img/2024-11-17/005.jpg" alt="藝術篇5">
-        <img src="/img/2024-11-17/006.jpg" alt="藝術篇6">
-        <img src="/img/2024-11-17/007.jpg" alt="藝術篇4">
-        <img src="/img/2024-11-17/008.jpg" alt="藝術篇5">
-        <img src="/img/2024-11-17/009.jpg" alt="藝術篇6">
+      <img :src="`${imgBase}/img/2024-11-17/001.jpg`" alt="藝術篇1">
+      <img :src="`${imgBase}/img/2024-11-17/002.jpg`" alt="藝術篇2">
+      <img :src="`${imgBase}/img/2024-11-17/003.jpg`" alt="藝術篇3">
+      <img :src="`${imgBase}/img/2024-11-17/004.jpg`" alt="藝術篇4">
+      <img :src="`${imgBase}/img/2024-11-17/005.jpg`" alt="藝術篇5">
+      <img :src="`${imgBase}/img/2024-11-17/006.jpg`" alt="藝術篇6">
+      <img :src="`${imgBase}/img/2024-11-17/007.jpg`" alt="藝術篇7">
+      <img :src="`${imgBase}/img/2024-11-17/008.jpg`" alt="藝術篇8">
+      <img :src="`${imgBase}/img/2024-11-17/009.jpg`" alt="藝術篇9">
+
     </div>
 
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue'
 import './Common.css'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 </script>

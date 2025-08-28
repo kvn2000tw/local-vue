@@ -24,18 +24,20 @@
     <h3>活動照片</h3>
   </div>
     <div class="gallery">
-        <img src="/img/2022-11-22/001.jpeg" alt="健走杖健走活動1">
-        <img src="/img/2022-11-22/002.jpeg" alt="健走杖健走活動2">
-        <img src="/img/2022-11-22/003.jpeg" alt="健走杖健走活動3">
-        <img src="/img/2022-11-22/004.jpg" alt="健走杖健走活動4">
-        <img src="/img/2022-11-22/005.jpg" alt="健走杖健走活動5">
-        <img src="/img/2022-11-22/006.jpg" alt="健走杖健走活動6">
-      
+        <img :src="`${imgBase}/img/2022-11-22/001.jpeg`" alt="健走杖健走活動1">
+        <img :src="`${imgBase}/img/2022-11-22/002.jpeg`" alt="健走杖健走活動2">
+        <img :src="`${imgBase}/img/2022-11-22/003.jpeg`" alt="健走杖健走活動3">
+        <img :src="`${imgBase}/img/2022-11-22/004.jpg`" alt="健走杖健走活動4">
+        <img :src="`${imgBase}/img/2022-11-22/005.jpg`" alt="健走杖健走活動5">
+        <img :src="`${imgBase}/img/2022-11-22/006.jpg`" alt="健走杖健走活動6">
+        
     </div>
 
   
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue'
 import './Common.css'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 </script>

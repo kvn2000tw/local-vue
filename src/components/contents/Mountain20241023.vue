@@ -9,17 +9,19 @@
     <h3>活動照片</h3>
   </div>
     <div class="gallery">
-        <img src="/img/2024-10-23/001.jpg" alt="山林茶趣篇1">
-        <img src="/img/2024-10-23/002.jpg" alt="山林茶趣篇2">
-        <img src="/img/2024-10-23/003.jpg" alt="山林茶趣篇3">
-        <img src="/img/2024-10-23/004.jpg" alt="山林茶趣篇4">
-        <img src="/img/2024-10-23/005.jpg" alt="山林茶趣篇5">
-        <img src="/img/2024-10-23/006.jpg" alt="山林茶趣篇6">
-      
+      <img :src="`${imgBase}/img/2024-10-23/001.jpg`" alt="山林茶趣篇1">
+      <img :src="`${imgBase}/img/2024-10-23/002.jpg`" alt="山林茶趣篇2">
+      <img :src="`${imgBase}/img/2024-10-23/003.jpg`" alt="山林茶趣篇3">
+      <img :src="`${imgBase}/img/2024-10-23/004.jpg`" alt="山林茶趣篇4">
+      <img :src="`${imgBase}/img/2024-10-23/005.jpg`" alt="山林茶趣篇5">
+      <img :src="`${imgBase}/img/2024-10-23/006.jpg`" alt="山林茶趣篇6">
+
     </div>
 
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue'
 import './Common.css'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 </script>

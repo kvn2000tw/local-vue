@@ -32,65 +32,67 @@
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
+
 const levels = [
   {
     desc: "第一關『講古聽福伯』關主：瑞福老師。說明冷水坑溪的歷史。讓民眾了解在這附近曾經有一條很有名的溪流。",
     images: [
-      '/img/2022-12-11/level1/001.jpeg',
-      '/img/2022-12-11/level1/002.jpeg',
-      '/img/2022-12-11/level1/003.jpeg',
-      '/img/2022-12-11/level1/004.jpeg',
-      '/img/2022-12-11/level1/005.jpg',
-      '/img/2022-12-11/level1/006.jpeg',
+      `${imgBase}/img/2022-12-11/level1/001.jpeg`,
+      `${imgBase}/img/2022-12-11/level1/002.jpeg`,
+      `${imgBase}/img/2022-12-11/level1/003.jpeg`,
+      `${imgBase}/img/2022-12-11/level1/004.jpeg`,
+      `${imgBase}/img/2022-12-11/level1/005.jpg`,
+      `${imgBase}/img/2022-12-11/level1/006.jpeg`,
     ]
   },
   {
     desc: "第二關『我是約溪高手』關主：雅婷老師。準備了一個游泳圈，可以讓小朋友玩約魚遊戲。",
     images: [
-      '/img/2022-12-11/level2/001.jpg',
-      '/img/2022-12-11/level2/002.jpg',
-      '/img/2022-12-11/level2/003.jpg',
-      '/img/2022-12-11/level2/004.jpg',
-      '/img/2022-12-11/level2/005.jpg',
-      '/img/2022-12-11/level2/006.jpg',
+      `${imgBase}/img/2022-12-11/level2/001.jpg`,
+      `${imgBase}/img/2022-12-11/level2/002.jpg`,
+      `${imgBase}/img/2022-12-11/level2/003.jpg`,
+      `${imgBase}/img/2022-12-11/level2/004.jpg`,
+      `${imgBase}/img/2022-12-11/level2/005.jpg`,
+      `${imgBase}/img/2022-12-11/level2/006.jpg`,
     ]
   },
   {
     desc: "第三關『冷水坑溪景點對對碰』關主：國琴老師。以六個冷水坑溪附近的景點當作骰子的點數，民眾可以以擲骰子的點數說出景點的名稱。",
     images: [
-      '/img/2022-12-11/level3/001.jpg',
-      '/img/2022-12-11/level3/002.jpg',
-      '/img/2022-12-11/level3/003.jpg',
-      '/img/2022-12-11/level3/004.jpg',
-      '/img/2022-12-11/level3/005.jpg',
-      '/img/2022-12-11/level3/006.jpg',
+      `${imgBase}/img/2022-12-11/level3/001.jpg`,
+      `${imgBase}/img/2022-12-11/level3/002.jpg`,
+      `${imgBase}/img/2022-12-11/level3/003.jpg`,
+      `${imgBase}/img/2022-12-11/level3/004.jpg`,
+      `${imgBase}/img/2022-12-11/level3/005.jpg`,
+      `${imgBase}/img/2022-12-11/level3/006.jpg`,
     ]
   },
   {
     desc: "第四關『尋植物~奉茶』關主：泓瑜老師。認識盆栽植物，現場備有香草茶可以享用。",
     images: [
-      '/img/2022-12-11/level4/001.jpg',
-      '/img/2022-12-11/level4/002.jpg',
-      '/img/2022-12-11/level4/003.jpeg',
-      '/img/2022-12-11/level4/004.jpg',
-      '/img/2022-12-11/level4/005.jpg',
-      '/img/2022-12-11/level4/006.jpg',
+      `${imgBase}/img/2022-12-11/level4/001.jpg`,
+      `${imgBase}/img/2022-12-11/level4/002.jpg`,
+      `${imgBase}/img/2022-12-11/level4/003.jpeg`,
+      `${imgBase}/img/2022-12-11/level4/004.jpg`,
+      `${imgBase}/img/2022-12-11/level4/005.jpg`,
+      `${imgBase}/img/2022-12-11/level4/006.jpg`,
     ]
   },
   {
     desc: "第五關『冷水坑溪DIY 紙黏土捏塑』關主：品慧老師。以當時的冷水坑溪魚種為樣本，由民眾以紙黏土捏出其中一種魚。",
     images: [
-      '/img/2022-12-11/level5/001.jpg',
-      '/img/2022-12-11/level5/002.jpg',
-      '/img/2022-12-11/level5/003.jpg',
-      '/img/2022-12-11/level5/004.jpg',
-      '/img/2022-12-11/level5/005.jpg',
-      '/img/2022-12-11/level5/006.jpg',
+      `${imgBase}/img/2022-12-11/level5/001.jpg`,
+      `${imgBase}/img/2022-12-11/level5/002.jpg`,
+      `${imgBase}/img/2022-12-11/level5/003.jpg`,
+      `${imgBase}/img/2022-12-11/level5/004.jpg`,
+      `${imgBase}/img/2022-12-11/level5/005.jpg`,
+      `${imgBase}/img/2022-12-11/level5/006.jpg`,
     ]
   },
 ]
 </script>
-
 <style scoped>
 .activity-gallery {
   padding: 10px 20px;

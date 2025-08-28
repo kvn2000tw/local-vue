@@ -20,12 +20,12 @@
   </div>
  
     <div class="gallery">
-        <img src="/img/2024-12-28/020.jpg" alt="成果展1">
-        <img src="/img/2024-12-28/021.jpg" alt="成果展2">
-        <img src="/img/2024-12-28/022.jpg" alt="成果展3">
-        <img src="/img/2024-12-28/018.jpg" alt="成果展4">
-        <img src="/img/2024-12-28/019.jpg" alt="成果展5">
-        <img src="/img/2024-12-28/0071.jpg" alt="成果展6">
+      <img :src="`${imgBase}/img/2024-12-28/020.jpg`" alt="成果展1">
+      <img :src="`${imgBase}/img/2024-12-28/021.jpg`" alt="成果展2">
+      <img :src="`${imgBase}/img/2024-12-28/022.jpg`" alt="成果展3">
+      <img :src="`${imgBase}/img/2024-12-28/018.jpg`" alt="成果展4">
+      <img :src="`${imgBase}/img/2024-12-28/019.jpg`" alt="成果展5">
+      <img :src="`${imgBase}/img/2024-12-28/0071.jpg`" alt="成果展6">
        
     </div>
 
@@ -38,22 +38,24 @@
      <h3>活動照片</h3>
   </div>
     <div class="gallery">
-        <img src="/img/2024-12-28/001.jpg" alt="成果展1">
-        <img src="/img/2024-12-28/002.jpg" alt="成果展2">
-        <img src="/img/2024-12-28/003.jpg" alt="成果展3">
-        <img src="/img/2024-12-28/004.jpg" alt="成果展4">
-        <img src="/img/2024-12-28/005.jpg" alt="成果展5">
-        <img src="/img/2024-12-28/006.jpg" alt="成果展6">
-        <img src="/img/2024-12-28/010.jpg" alt="成果展4">
-        <img src="/img/2024-12-28/011.jpg" alt="成果展5">
-        <img src="/img/2024-12-28/012.jpg" alt="成果展6">
-        <img src="/img/2024-12-28/013.jpg" alt="成果展4">
-        <img src="/img/2024-12-28/014.jpg" alt="成果展5">
-        <img src="/img/2024-12-28/015.jpg" alt="成果展6">
-       
-    </div>
+      <img :src="`${imgBase}/img/2024-12-28/001.jpg`" alt="成果展1">
+      <img :src="`${imgBase}/img/2024-12-28/002.jpg`" alt="成果展2">
+      <img :src="`${imgBase}/img/2024-12-28/003.jpg`" alt="成果展3">
+      <img :src="`${imgBase}/img/2024-12-28/004.jpg`" alt="成果展4">
+      <img :src="`${imgBase}/img/2024-12-28/005.jpg`" alt="成果展5">
+      <img :src="`${imgBase}/img/2024-12-28/006.jpg`" alt="成果展6">
 
-</template>
+      <img :src="`${imgBase}/img/2024-12-28/010.jpg`" alt="成果展1">
+      <img :src="`${imgBase}/img/2024-12-28/011.jpg`" alt="成果展2">
+      <img :src="`${imgBase}/img/2024-12-28/012.jpg`" alt="成果展3">
+      <img :src="`${imgBase}/img/2024-12-28/013.jpg`" alt="成果展4">
+      <img :src="`${imgBase}/img/2024-12-28/014.jpg`" alt="成果展5">
+      <img :src="`${imgBase}/img/2024-12-28/015.jpg`" alt="成果展6">
+  
+    </div>
+  </template>
 <script setup>
+import { getCurrentInstance } from 'vue'
 import './Common.css'
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 </script>
