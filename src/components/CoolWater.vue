@@ -29,6 +29,9 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { getCurrentInstance } from 'vue'
+
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 
 // 匯入各個子元件
 import Water20220602 from './contents/Water20220602.vue'
@@ -45,42 +48,42 @@ function goBack() {
 const cards = [
   {
     id: 'water20220602',
-    img: '/img/2022-06-02/002.jpg',
+    img: `${imgBase}/img/2022-06-02/002.jpg`,
     title: '冷水坑溪山水系列',
     desc: '探訪冷水坑溪',
     component: Water20220602
   },
   {
     id: 'water20221110',
-    img: '/img/2022-11-10/001.jpg',
+    img: `${imgBase}/img/2022-11-10/001.jpg`,
     title: '冷水坑溪山水系列',
     desc: '爺爺、奶奶暢遊冷水坑溪岸的靜心湖',
     component: Water20221110
   },
   {
     id: 'water20221211',
-    img: '/img/2022-12-11/level1/006.jpeg',
+    img: `${imgBase}/img/2022-12-11/level1/006.jpeg`,
     title: '冷水坑溪山水系列',
     desc: '冷水坑溪親子遊',
     component: Water20221211
   },
   {
     id: 'water20230506',
-    img: '/img/2023-05-06/001.jpg',
+    img: `${imgBase}/img/2023-05-06/001.jpg`,
     title: '冷水坑溪山水系列',
     desc: '冷水坑溪家庭大健走',
     component: Water20230506
   },
   {
     id: 'water20240504',
-    img: '/img/2024-05-04/006.jpg',
+    img: `${imgBase}/img/2024-05-04/006.jpg`,
     title: '冷水坑溪山水系列',
     desc: '走訪冷水坑溪寺廟之旅',
     component: Water20240504
   },
   {
     id: 'water20250503',
-    img: '/img/2024-05-04/006.jpg',
+    img: `${imgBase}/img/2024-05-04/006.jpg`,
     title: '冷水坑溪山水系列',
     desc: '冷水坑溪賞荷會',
     component: Water20250503

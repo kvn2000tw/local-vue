@@ -27,8 +27,12 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref, computed } from 'vue'
+import { getCurrentInstance } from 'vue'
+
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 
 // 匯入各個子元件
 import Mountain20221122 from './contents/Mountain20221122.vue'
@@ -49,70 +53,70 @@ function goBack() {
 const cards = [
     {
     id: 'mountain20221122',
-    img: '/img/2022-11-22/001.jpeg',
+    img: `${imgBase}/img/2022-11-22/001.jpeg`,
     title: '十八尖山山林教育系列',
     desc: '使用健走杖健走活動',
     component: Mountain20221122
   },
   {
     id: 'mountain20240724',
-    img: '/img/2024-07-04/004.jpg',
+    img: `${imgBase}/img/2024-07-04/004.jpg`,
     title: '十八尖山山林教育系列',
     desc: '歷史與植物探索',
     component: Mountain20240724
   },
   {
     id: 'mountain20240804',
-    img: '/img/2024-08-04/002.jpg',
+    img: `${imgBase}/img/2024-08-04/002.jpg`,
     title: '十八尖山山林教育系列',
     desc: '十八尖山走讀歷史&手機APP辨識植物探索-探勘篇',
     component: Mountain20240804
   },
   {
     id: 'mountain20240823',
-    img: '/img/2024-08-23/001.jpg',
+    img: `${imgBase}/img/2024-08-23/001.jpg`,
     title: '十八尖山山林教育系列',
     desc: '十八尖山走讀歷史&手機APP辨識植物探索',
     component: Mountain20240823
   },
   {
     id: 'mountain20241012',
-    img: '/img/2024-10-12/002.jpg',
+    img: `${imgBase}/img/2024-10-12/002.jpg`,
     title: '十八尖山山林教育系列',
     desc: '石觀音探訪與茶道文化體驗篇',
     component: Mountain20241012
   },
   {
     id: 'mountain20241023',
-    img: '/img/2024-10-23/003.jpg',
+    img: `${imgBase}/img/2024-10-23/003.jpg`,
     title: '十八尖山山林教育系列',
     desc: '山林茶趣篇',
     component: Mountain20241023
   },
   {
     id: 'mountain20241103',
-    img: '/img/2024-11-03/007.jpg',
+    img: `${imgBase}/img/2024-11-03/007.jpg`,
     title: '十八尖山山林教育系列',
     desc: '十八尖山山林系列雅韻篇',
     component: Mountain20241103
   },
   {
     id: 'mountain20241117',
-    img: '/img/2024-11-17/004.jpg',
+    img: `${imgBase}/img/2024-11-17/004.jpg`,
     title: '十八尖山山林教育系列',
     desc: '十八尖山山林系列藝術篇',
     component: Mountain20241117
   },
   {
     id: 'mountain20241124',
-    img: '/img/2024-11-24/001.jpg',
+    img: `${imgBase}/img/2024-11-24/001.jpg`,
     title: '十八尖山山林教育系列',
     desc: '山林健康有氧篇',
     component: Mountain20241124
   },
   {
     id: 'mountain20241228',
-    img: '/img/2024-12-28/018.jpg',
+    img: `${imgBase}/img/2024-12-28/018.jpg`,
     title: '十八尖山山林教育系列',
     desc: '永續發展與生活實踐十八尖山成果展',
     component: Mountain20241228

@@ -10,7 +10,7 @@ const app = createApp(App)
 
 app.config.globalProperties.$env = {
   
-  apiUrl: process.env.NODE_ENV !== 'development'
+  apiUrl: process.env.NODE_ENV === 'development'
    ? ''
     : 'https://cdn.jsdelivr.net/gh/kvn2000tw/local-vue/public'
 }
