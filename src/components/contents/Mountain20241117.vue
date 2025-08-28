@@ -26,7 +26,7 @@
         <img src="/img/2024-11-17/004.jpg" alt="藝術篇4">
         <img src="/img/2024-11-17/005.jpg" alt="藝術篇5">
         <img src="/img/2024-11-17/006.jpg" alt="藝術篇6">
-        <img src="img/2024-11-17/007.jpg" alt="藝術篇4">
+        <img src="/img/2024-11-17/007.jpg" alt="藝術篇4">
         <img src="/img/2024-11-17/008.jpg" alt="藝術篇5">
         <img src="/img/2024-11-17/009.jpg" alt="藝術篇6">
     </div>
