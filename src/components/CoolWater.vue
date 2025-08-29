@@ -83,7 +83,7 @@ const cards = [
   },
   {
     id: 'water20250503',
-    img: `${imgBase}/img/2024-05-04/006.jpg`,
+    img: `${imgBase}/img/2025-05-03/001.jpg`,
     title: '冷水坑溪山水系列',
     desc: '冷水坑溪賞荷會',
     component: Water20250503
