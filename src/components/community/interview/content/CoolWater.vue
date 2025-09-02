@@ -75,7 +75,7 @@ const images = {
 .feature-block {
   max-width: 700px;
   margin: 40px auto 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .image-row {
