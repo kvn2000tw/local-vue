@@ -1,8 +1,8 @@
 <template>
   <div class="feature-block">
     <div class="image-row">
-      <img src="/img/採訪劉瓊林.jpg" alt="冷水坑溪風景1" class="feature-image" />
-      <img src="/img/採訪黎正興.jpg" alt="冷水坑溪風景2" class="feature-image" />
+      <img :src="images.liu" alt="冷水坑溪風景1" class="feature-image" />
+      <img :src="images.li" alt="冷水坑溪風景2" class="feature-image" />
     </div>
 
     <h2 class="feature-title">冷水坑溪現在與未來 ~ 羅瑞福採訪實記</h2>
@@ -58,7 +58,17 @@
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue'
+
+const imgBase1 = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
+
 // 無需 script 邏輯，純展示元件
+const imgBase = `${imgBase1}/img` // 可根據實際部署環境調整
+
+const images = {
+  liu: `${imgBase}/採訪劉瓊林.jpg`,
+  li: `${imgBase}/採訪黎正興.jpg`,
+}
 </script>
 
 <style scoped>

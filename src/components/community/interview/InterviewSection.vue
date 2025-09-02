@@ -28,10 +28,14 @@
 </template>
 
 <script setup>
+
 import { ref } from 'vue'
 import CoolWater from './content/CoolWater.vue'
 //import LengShuiKeng from '@/components/interviews/JuanCun.vue'
 //import LengShuiKeng from '@/components/interviews/NanGang.vue'
+import { getCurrentInstance } from 'vue'
+
+const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 
 const activePerson = ref(null)
 
@@ -40,21 +44,21 @@ const people = [
     id: 'lengshuikeng',
     name: '冷水坑溪',
     role: '深入訪談在地重要人物，了解他們的故事與貢獻。',
-    image: '/img/清咸豐九年淡新檔案金山面一代埔地圖說.png',
+    image: `${imgBase}/img/清咸豐九年淡新檔案金山面一代埔地圖說.png`,
     component: CoolWater,
   },
   {
     id: 'juancun',
     name: '眷村採訪',
     role: '深入眷村文化，採訪在地居民，記錄珍貴的歷史記憶與生活故事。',
-    image: '/img/眷村採訪.png',
+    image: `${imgBase}/img/眷村採訪.png`,
     component: CoolWater,
   },
   {
     id: 'nangang',
     name: '南港採訪',
     role: '走訪南港社區，採訪在地人物，了解南港社區的發展歷程與文化特色。',
-    image: '/img/社區採訪.png',
+    image: `${imgBase}/img/社區採訪.png`,
     component: CoolWater,
   },
 ]
