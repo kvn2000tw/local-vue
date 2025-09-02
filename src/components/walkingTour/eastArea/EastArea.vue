@@ -25,8 +25,8 @@
 
 <script setup>
 import { ref } from 'vue'
-import Tab18Jianshan from './Mountain18.vue'
-import TabLengShuiKeng from './CoolWater.vue'
+import Tab18Jianshan from './mountain/Mountain18.vue'
+import TabLengShuiKeng from './water/CoolWater.vue'
 
 
 const tabs = [

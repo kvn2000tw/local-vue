@@ -13,8 +13,8 @@
 <script setup>
 
 import LayoutContainer from "@/components/LayoutContainer.vue";
-import WalkingTour from "@/components/WalkingTour.vue";
-import WalkingTourArea from "@/components/WalkingTourArea.vue";
+import WalkingTour from "@/components/walkingTour/WalkingTour.vue";
+import WalkingTourArea from "@/components/walkingTour/WalkingTourArea.vue";
 
 </script>
 

@@ -20,7 +20,7 @@ const router = useRouter()
 
 // 卡片資料
 const cards = [
-  { id: 'culture', title: '社區夥伴', desc: '人物專訪、社區夥伴、人才師資庫。', route: 'home' },
+  { id: 'culture', title: '社區夥伴', desc: '人物專訪、社區夥伴、人才師資庫。', route: 'communty' },
   { id: 'wisdom', title: '經驗觀點', desc: '教師分享、活動分享、學員分享。', route: 'experience' },
   { id: 'language', title: '走讀新竹', desc: '山林系列、水資源系列。', route: 'walking' },
   { id: 'nature', title: '地方創生', desc: '優良店家採訪', route: 'revitalization' },

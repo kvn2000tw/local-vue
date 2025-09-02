@@ -34,12 +34,12 @@ import { getCurrentInstance } from 'vue'
 const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 
 // 匯入各個子元件
-import Water20220602 from './contents/Water20220602.vue'
-import Water20221110 from './contents/Water20221110.vue'
-import Water20221211 from './contents/Water20221211.vue'
-import Water20230506 from './contents/Water20230506.vue'
-import Water20240504 from './contents/Water20240504.vue'
-import Water20250503 from './contents/Water20250503.vue'
+import Water20220602 from './Water20220602.vue'
+import Water20221110 from './Water20221110.vue'
+import Water20221211 from './Water20221211.vue'
+import Water20230506 from './Water20230506.vue'
+import Water20240504 from './Water20240504.vue'
+import Water20250503 from './Water20250503.vue'
 
 function goBack() {
   selected.value = null;

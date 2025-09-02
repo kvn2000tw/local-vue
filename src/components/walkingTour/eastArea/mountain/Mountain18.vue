@@ -35,16 +35,16 @@ import { getCurrentInstance } from 'vue'
 const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 
 // 匯入各個子元件
-import Mountain20221122 from './contents/Mountain20221122.vue'
-import Mountain20240724 from './contents/Mountain20240724.vue'
-import Mountain20240804 from './contents/Mountain20240804.vue'
-import Mountain20240823 from './contents/Mountain20240823.vue'
-import Mountain20241012 from './contents/Mountain20241012.vue'
-import Mountain20241023 from './contents/Mountain20241023.vue'
-import Mountain20241103 from './contents/Mountain20241103.vue'
-import Mountain20241117 from './contents/Mountain20241117.vue'
-import Mountain20241124 from './contents/Mountain20241124.vue'
-import Mountain20241228 from './contents/Mountain20241228.vue'
+import Mountain20221122 from './Mountain20221122.vue'
+import Mountain20240724 from './Mountain20240724.vue'
+import Mountain20240804 from './Mountain20240804.vue'
+import Mountain20240823 from './Mountain20240823.vue'
+import Mountain20241012 from './Mountain20241012.vue'
+import Mountain20241023 from './Mountain20241023.vue'
+import Mountain20241103 from './Mountain20241103.vue'
+import Mountain20241117 from './Mountain20241117.vue'
+import Mountain20241124 from './Mountain20241124.vue'
+import Mountain20241228 from './Mountain20241228.vue'
 
 function goBack() {
   selected.value = null;

@@ -29,9 +29,9 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-import EastArea from './EastArea.vue'
-import XiangShan from './XiangShan.vue'
-import NorthArea from './NorthArea.vue'
+import EastArea from './walkingTour/eastArea/EastArea.vue'
+import XiangShan from './walkingTour/xiangShan/XiangShan.vue'
+import NorthArea from './walkingTour/northArea/NorthArea.vue'
 
 const tabs = [
   { key: 'dongqu', label: '東區', component: EastArea },

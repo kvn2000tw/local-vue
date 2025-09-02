@@ -25,6 +25,6 @@
 </template>
 
 <script setup>
-import PhotoGallery from '@/components/PhotoGallery.vue'
+import PhotoGallery from '../PhotoGallery.vue'
 
 </script>

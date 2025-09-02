@@ -22,6 +22,6 @@
 
 <script setup>
 import { getCurrentInstance } from 'vue'
-import './Common.css'
+import '../Common.css'
 const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
 </script>
