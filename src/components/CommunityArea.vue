@@ -29,17 +29,17 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-import EastArea from './walkingTour/eastArea/EastArea.vue'
-import XiangShan from './walkingTour/xiangShan/XiangShan.vue'
-import NorthArea from './walkingTour/northArea/NorthArea.vue'
+import InterviewSection from './community/interview/InterviewSection.vue'
+import CommunityPartners from './community/community/CommunityPartners.vue'
+import TalentPool from './community/talent/TalentPool.vue'
 
 const tabs = [
-  { key: 'dongqu', label: '東區', component: EastArea },
-  { key: 'xiangshan', label: '香山區', component: XiangShan },
-  { key: 'beiqu', label: '北區', component: NorthArea },
+  { key: 'interview', label: '人物專訪', component: InterviewSection },
+  { key: 'community', label: '社區夥伴', component: CommunityPartners },
+  { key: 'talent', label: '人才師資庫', component: TalentPool },
 ]
 
-const activeTab = ref('dongqu')
+const activeTab = ref('interview')
 const tabRefs = ref([])
 
 const activeComponent = computed(() => {
