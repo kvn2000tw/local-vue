@@ -1,12 +1,22 @@
 <!-- src/pages/ExperienceSharing.vue -->
 <template>
-  <div class="page">
-    <h2>經驗分享與觀點</h2>
-    <p>教師分享、活動分享、學員分享（此頁為範例占位）。</p>
-    <RouterLink to="/">← 回到首頁</RouterLink>
-  </div>
+ <LayoutContainer>
+   
+    <!-- 內容顯示區域 -->
+    <ExperienceMain />
+   
+    <ExperienceArea />
+  </LayoutContainer>
 </template>
-<script setup></script>
-<style scoped>
-.page { padding: 16px; }
+<script setup>
+
+import LayoutContainer from "@/components/LayoutContainer.vue";
+import ExperienceMain from "@/components/ExperienceMain.vue";
+import ExperienceArea from "@/components/ExperienceArea.vue";
+
+</script>
+
+<style scoped> 
+/* 卡片樣式（共用） */
+
 </style>

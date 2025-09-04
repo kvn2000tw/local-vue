@@ -1,12 +1,23 @@
-<!-- src/pages/LocalRevitalization.vue -->
+<!-- src/pages/ExperienceSharing.vue -->
 <template>
-  <div class="page">
-    <h2>地方創生</h2>
-    <p>優良店家採訪（此頁為範例占位）。</p>
-    <RouterLink to="/">← 回到首頁</RouterLink>
-  </div>
+ <LayoutContainer>
+   
+    <!-- 內容顯示區域 -->
+    <RevitalizationMain />
+   
+
+    <RevitalizationArea />
+  </LayoutContainer>
 </template>
-<script setup></script>
-<style scoped>
-.page { padding: 16px; }
+<script setup>
+
+import LayoutContainer from "@/components/LayoutContainer.vue";
+import RevitalizationMain from "@/components/RevitalizationMain.vue";
+import RevitalizationArea from "@/components/RevitalizationArea.vue";
+
+</script>
+
+<style scoped> 
+/* 卡片樣式（共用） */
+
 </style>

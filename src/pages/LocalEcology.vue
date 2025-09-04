@@ -1,12 +1,22 @@
-<!-- src/pages/LocalEcology.vue -->
+<!-- src/pages/ExperienceSharing.vue -->
 <template>
-  <div class="page">
-    <h2>在地生態</h2>
-    <p>濕地保育、溪流河域（此頁為範例占位）。</p>
-    <RouterLink to="/">← 回到首頁</RouterLink>
-  </div>
+ <LayoutContainer>
+   
+    <!-- 內容顯示區域 -->
+    <EcologyMain />
+  
+    <EcologyArea />
+  </LayoutContainer>
 </template>
-<script setup></script>
-<style scoped>
-.page { padding: 16px; }
+<script setup>
+
+import LayoutContainer from "@/components/LayoutContainer.vue";
+import EcologyMain from "@/components/EcologyMain.vue";
+import EcologyArea from "@/components/EcologyArea.vue";
+
+</script>
+
+<style scoped> 
+/* 卡片樣式（共用） */
+
 </style>
