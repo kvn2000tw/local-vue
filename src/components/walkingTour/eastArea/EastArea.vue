@@ -27,11 +27,13 @@
 import { ref } from 'vue'
 import Tab18Jianshan from './mountain/Mountain18.vue'
 import TabLengShuiKeng from './water/CoolWater.vue'
+import TabLiuLianLi from './village/Village.vue'
 
 
 const tabs = [
   { key: '18jianshan', label: '18尖山系列', component: Tab18Jianshan },
-  { key: 'lengshuikeng', label: '冷水坑溪系列', component: TabLengShuiKeng }
+  { key: 'lengshuikeng', label: '冷水坑溪系列', component: TabLengShuiKeng },
+  { key: 'liulianli', label: '六大聯里系列', component: TabLiuLianLi }
 ]
 
 const activeTab = ref('18jianshan')
