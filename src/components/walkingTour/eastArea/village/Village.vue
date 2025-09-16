@@ -43,7 +43,7 @@ function goBack() {
 const cards = [
   {
     id: 'village20250913',
-    img: `${imgBase}/img/2022-06-02/002.jpg`,
+    img: `${imgBase}/img/2025-09-13/011.jpg`,
     title: '六大聯里系列',
     desc: '建功聯里走讀學堂系列3',
     component: Village20250913

@@ -26,19 +26,34 @@
 
 <!-- 第一排：4 張 -->
 <div class="photo-row">
-  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/001.jpg`" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/007.jpg`" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/003.jpg`" alt="探訪冷水坑溪"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/001.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/007.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/003.jpg`" alt="建功聯里走讀學堂系列3"></div>
 </div>
 
 <!-- 第二排：3 張 -->
 <div class="photo-row">
  
-  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/004.jpg`" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/005.jpg`" alt="探訪冷水坑溪"></div>
-  <div class="photo-col"><img :src="`${imgBase}/img/2022-06-02/006.jpg`" alt="探訪冷水坑溪"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/004.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/005.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/006.jpg`" alt="建功聯里走讀學堂系列3"></div>
 </div>
 
+
+<!-- 第一排：4 張 -->
+<div class="photo-row">
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/007.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/008.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/009.jpg`" alt="建功聯里走讀學堂系列3"></div>
+</div>
+
+<!-- 第二排：3 張 -->
+<div class="photo-row">
+ 
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/010.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/011.jpg`" alt="建功聯里走讀學堂系列3"></div>
+  <div class="photo-col"><img :src="`${imgBase}/img/2025-09-13/012.jpg`" alt="建功聯里走讀學堂系列3"></div>
+</div>
 
 </div>
 </div>
