@@ -5,7 +5,7 @@
     <!-- 內容顯示區域 -->
     <ExperienceMain />
    
-    <ExperienceArea />
+    <LearnCollect />
   </LayoutContainer>
 </template>
 <script setup>
@@ -13,6 +13,7 @@
 import LayoutContainer from "@/components/LayoutContainer.vue";
 import ExperienceMain from "@/components/ExperienceMain.vue";
 import ExperienceArea from "@/components/ExperienceArea.vue";
+import LearnCollect from "@/components/experience/learnCollect/LearnCollect.vue";
 
 </script>
 

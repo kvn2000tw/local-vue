@@ -29,14 +29,15 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-import TeacherShare from './experience/teacherShare/TeacherShare.vue'
+import LearnCollect from './experience/learnCollect/LearnCollect.vue'
 import EventShare from './experience/eventShare/EventShare.vue'
 import StudentShare from './experience/studentShare/StudentShare.vue'
 
 const tabs = [
-  { key: 'teacher', label: '教師分享', component: TeacherShare },
-  { key: 'event', label: '活動分享', component: EventShare },
-  { key: 'student', label: '學員分享', component: StudentShare },
+  { key: 'Learnandcollect', label: '學習收藏', component: LearnCollect },
+  //{ key: 'teacher', label: '教師分享', component: TeacherShare },
+  //{ key: 'event', label: '活動分享', component: EventShare },
+  //{ key: 'student', label: '學員分享', component: StudentShare },
 ]
 
 const activeTab = ref('teacher')
