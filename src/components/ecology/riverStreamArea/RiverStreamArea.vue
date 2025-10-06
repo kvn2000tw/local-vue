@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>溪流河域</h1>
-
+ <p class="yt-description">
+      科學城璀璨二十111年春線上成果展 六早 走進大自然步出大健康-步道探索
+    </p>
     <div class="yt-wrap">
       <iframe
         src="https://www.youtube.com/embed/5CDHg-J6x0M"
@@ -15,6 +17,14 @@
 </template>
 
 <style scoped>
+.yt-description {
+  font-size: 16px;
+  text-align: center;
+  margin: 8px auto 24px;
+  max-width: 720px;
+  color: #555;
+  line-height: 1.6;
+}
 .yt-wrap {
   position: relative;
   width: 100%;

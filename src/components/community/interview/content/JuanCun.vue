@@ -1,5 +1,10 @@
 <template>
   <div>
+    
+    <p class="yt-description">
+      1081221 新竹市科學城社區大學 幸福共學 聖誕同樂 成果展 立功社區
+    </p>
+
     <div class="yt-wrap">
       <iframe
         src="https://www.youtube.com/embed/kImbPXUURxA"
@@ -13,13 +18,31 @@
 </template>
 
 <style scoped>
+.yt-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 24px;
+  color: #2c3e50;
+}
+
+.yt-description {
+  font-size: 16px;
+  text-align: center;
+  margin: 8px auto 24px;
+  max-width: 720px;
+  color: #555;
+  line-height: 1.6;
+}
+
 .yt-wrap {
   position: relative;
   width: 100%;
-  max-width: 800px;   /* 可依需求調整最大寬度 */
-  margin: 16px auto;  /* 置中 */
+  max-width: 800px;
+  margin: 16px auto;
   aspect-ratio: 16 / 9;
 }
+
 .yt-wrap iframe {
   position: absolute;
   inset: 0;
