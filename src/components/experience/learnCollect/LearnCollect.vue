@@ -1,7 +1,20 @@
 <template>
-  <section class="info-card" aria-labelledby="info-title">
-    <h2 id="info-title" class="info-title">{{ title }}</h2>
+  <section class="info-card" role="region" :aria-labelledby="infoId">
+    <!-- 圖片區塊 -->
+    <img
+      class="info-image"
+      :src="imageUrl"
+      :alt="imageAlt"
+    />
+
+    <!-- 標題與內容 -->
+    <h2 :id="infoId" class="info-title">{{ title }}</h2>
     <p class="info-text">{{ description }}</p>
+
+    <!-- 插槽區塊（可選） -->
+    <slot name="extra" />
+
+    <!-- 按鈕 -->
     <a
       class="info-button"
       :href="link"
@@ -15,7 +28,13 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+import { getCurrentInstance } from 'vue'
+
+const { appContext } = getCurrentInstance()
+const imgBase = appContext.config.globalProperties.$env.apiUrl
+
+const props = defineProps({
   title: {
     type: String,
     default: '學習收藏'
@@ -31,8 +50,19 @@ defineProps({
   buttonText: {
     type: String,
     default: '前往連結'
+  },
+  imagePath: {
+    type: String,
+    default: '/img/學習收藏.png'
+  },
+  imageAlt: {
+    type: String,
+    default: '學習收藏主視覺插圖'
   }
 })
+
+const imageUrl = computed(() => `${imgBase}${props.imagePath}`)
+const infoId = computed(() => `info-${props.title.replace(/\s+/g, '-')}`)
 </script>
 
 <style scoped>
@@ -45,6 +75,13 @@ defineProps({
   margin: 0 auto;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-image {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 16px;
+  border-radius: 8px;
 }
 
 .info-title {
@@ -73,6 +110,6 @@ defineProps({
 }
 
 .info-button:hover {
-  background-color: #2f5dde;
+  background-color: #2e6a4f;
 }
 </style>

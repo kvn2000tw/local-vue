@@ -1,10 +1,8 @@
 <template>
   <div>
-    <h1>溪流河域</h1>
-
     <div class="yt-wrap">
       <iframe
-        src="https://www.youtube.com/embed/5CDHg-J6x0M"
+        src="https://www.youtube.com/embed/kImbPXUURxA"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

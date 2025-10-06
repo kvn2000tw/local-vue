@@ -31,8 +31,8 @@
 
 import { ref } from 'vue'
 import CoolWater from './content/CoolWater.vue'
-//import LengShuiKeng from '@/components/interviews/JuanCun.vue'
-//import LengShuiKeng from '@/components/interviews/NanGang.vue'
+import JuanCun from './content/JuanCun.vue'
+import NanGang from './content/NanGang.vue'
 import { getCurrentInstance } from 'vue'
 
 const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
@@ -52,14 +52,14 @@ const people = [
     name: '眷村採訪',
     role: '深入眷村文化，採訪在地居民，記錄珍貴的歷史記憶與生活故事。',
     image: `${imgBase}/img/眷村採訪.png`,
-    component: null,
+    component: JuanCun,
   },
   {
     id: 'nangang',
     name: '南港採訪',
     role: '走訪南港社區，採訪在地人物，了解南港社區的發展歷程與文化特色。',
     image: `${imgBase}/img/社區採訪.png`,
-    component: null,
+    component: NanGang,
   },
 ]
 </script>
