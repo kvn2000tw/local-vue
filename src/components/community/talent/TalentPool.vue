@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>人材師資庫</h1>
+
     <div class="yt-row">
       <VideoCard
         v-for="(video, index) in videos"

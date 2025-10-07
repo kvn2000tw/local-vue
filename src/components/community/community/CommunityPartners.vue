@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>社區夥伴</h1>
+   
     <div class="yt-row">
       <VideoCard
         v-for="(video, index) in videos"
