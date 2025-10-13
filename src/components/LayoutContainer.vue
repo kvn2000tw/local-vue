@@ -6,8 +6,10 @@
   <div class="layout-container">
 <slot name="slot2" />
     <CardSection />
-
-    <slot />
+ <!-- slot 包裝區域，加上 ref -->
+      <div ref="slotScrollTarget">
+        <slot />
+      </div>
 
     <!-- 底部卡片區域 -->
     <CardSection style="margin-top: 40px; padding-bottom: 40px;" />
@@ -17,6 +19,7 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue'
 import NavBar from '@/components/NavBar.vue'
 import CardSection from '@/components/CardSection.vue'
 import AppFooter from '@/components/AppFooter.vue'
@@ -25,6 +28,24 @@ export default {
     NavBar,
     CardSection,
     AppFooter
+  },
+  setup() {
+    const slotScrollTarget = ref(null)
+
+onMounted(() => {
+  setTimeout(() => {
+    const navHeight = document.querySelector('nav')?.offsetHeight || 0
+    const top = slotScrollTarget.value?.getBoundingClientRect().top + window.scrollY - navHeight
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    })
+  }, 100) // 延遲確保 DOM 完成渲染
+})
+    return {
+      slotScrollTarget
+    }
   }
 };
 </script>
