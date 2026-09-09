@@ -45,53 +45,48 @@ import Mountain20241103 from './Mountain20241103.vue'
 import Mountain20241117 from './Mountain20241117.vue'
 import Mountain20241124 from './Mountain20241124.vue'
 import Mountain20241228 from './Mountain20241228.vue'
+import Mountain20251101 from './Mountain20251101.vue'
+import Mountain20260526 from './Mountain20260526.vue'
 
 function goBack() {
   selected.value = null;
 }
 // 卡片資料表：id 與對應元件
 const cards = [
-    {
-    id: 'mountain20221122',
-    img: `${imgBase}/img/2022-11-22/001.jpeg`,
+  {
+    id: 'mountain20260526',
+    img: `${imgBase}/img/2026-05-26/001.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '使用健走杖健走活動',
-    component: Mountain20221122
+    desc: '十八尖山五感體驗碳探勘',
+    component: Mountain20260526
   },
   {
-    id: 'mountain20240724',
-    img: `${imgBase}/img/2024-07-04/004.jpg`,
+    id: 'mountain20251101',
+    img: `${imgBase}/img/2025-11-01/001.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '歷史與植物探索',
-    component: Mountain20240724
+    desc: '十八尖山防空洞巡禮',
+    component: Mountain20251101
   },
   {
-    id: 'mountain20240804',
-    img: `${imgBase}/img/2024-08-04/002.jpg`,
+    id: 'mountain20241228',
+    img: `${imgBase}/img/2024-12-28/018.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '十八尖山走讀歷史&手機APP辨識植物探索-探勘篇',
-    component: Mountain20240804
+    desc: '永續發展與生活實踐十八尖山成果展',
+    component: Mountain20241228
   },
   {
-    id: 'mountain20240823',
-    img: `${imgBase}/img/2024-08-23/001.jpg`,
+    id: 'mountain20241124',
+    img: `${imgBase}/img/2024-11-24/001.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '十八尖山走讀歷史&手機APP辨識植物探索',
-    component: Mountain20240823
-  },
+    desc: '山林健康有氧篇',
+    component: Mountain20241124
+  },  
   {
-    id: 'mountain20241012',
-    img: `${imgBase}/img/2024-10-12/002.jpg`,
+    id: 'mountain20241117',
+    img: `${imgBase}/img/2024-11-17/004.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '石觀音探訪與茶道文化體驗篇',
-    component: Mountain20241012
-  },
-  {
-    id: 'mountain20241023',
-    img: `${imgBase}/img/2024-10-23/003.jpg`,
-    title: '十八尖山山林教育系列',
-    desc: '山林茶趣篇',
-    component: Mountain20241023
+    desc: '十八尖山山林系列藝術篇',
+    component: Mountain20241117
   },
   {
     id: 'mountain20241103',
@@ -101,26 +96,47 @@ const cards = [
     component: Mountain20241103
   },
   {
-    id: 'mountain20241117',
-    img: `${imgBase}/img/2024-11-17/004.jpg`,
+    id: 'mountain20241023',
+    img: `${imgBase}/img/2024-10-23/003.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '十八尖山山林系列藝術篇',
-    component: Mountain20241117
+    desc: '山林茶趣篇',
+    component: Mountain20241023
   },
   {
-    id: 'mountain20241124',
-    img: `${imgBase}/img/2024-11-24/001.jpg`,
+    id: 'mountain20241012',
+    img: `${imgBase}/img/2024-10-12/002.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '山林健康有氧篇',
-    component: Mountain20241124
+    desc: '石觀音探訪與茶道文化體驗篇',
+    component: Mountain20241012
   },
   {
-    id: 'mountain20241228',
-    img: `${imgBase}/img/2024-12-28/018.jpg`,
+    id: 'mountain20240823',
+    img: `${imgBase}/img/2024-08-23/001.jpg`,
     title: '十八尖山山林教育系列',
-    desc: '永續發展與生活實踐十八尖山成果展',
-    component: Mountain20241228
-  }
+    desc: '十八尖山走讀歷史&手機APP辨識植物探索',
+    component: Mountain20240823
+  },
+ {
+    id: 'mountain20240804',
+    img: `${imgBase}/img/2024-08-04/002.jpg`,
+    title: '十八尖山山林教育系列',
+    desc: '十八尖山走讀歷史&手機APP辨識植物探索-探勘篇',
+    component: Mountain20240804
+  },
+  {
+    id: 'mountain20240724',
+    img: `${imgBase}/img/2024-07-04/004.jpg`,
+    title: '十八尖山山林教育系列',
+    desc: '歷史與植物探索',
+    component: Mountain20240724
+  },
+    {
+    id: 'mountain20221122',
+    img: `${imgBase}/img/2022-11-22/001.jpeg`,
+    title: '十八尖山山林教育系列',
+    desc: '使用健走杖健走活動',
+    component: Mountain20221122
+  },
 ]
 
 const selected = ref(null)
