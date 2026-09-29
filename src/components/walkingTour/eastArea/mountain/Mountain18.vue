@@ -62,7 +62,7 @@ const cards = [
   },
   {
     id: 'mountain20251101',
-    img: `${imgBase}/img/2025-11-01/001.jpg`,
+    img: `${imgBase}/img/2025-11-01/001.JPG`,
     title: '十八尖山山林教育系列',
     desc: '十八尖山防空洞巡禮',
     component: Mountain20251101
