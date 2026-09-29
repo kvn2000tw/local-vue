@@ -40,39 +40,26 @@ import Water20221211 from './Water20221211.vue'
 import Water20230506 from './Water20230506.vue'
 import Water20240504 from './Water20240504.vue'
 import Water20250503 from './Water20250503.vue'
+import Water20260728 from './Water20260728.vue'
 
 function goBack() {
   selected.value = null;
 }
 // 卡片資料表：id 與對應元件
 const cards = [
-  {
-    id: 'water20220602',
-    img: `${imgBase}/img/2022-06-02/002.jpg`,
+   {
+    id: 'water20260728',
+    img: `${imgBase}/img/2026-07-28/001.jpg`,
     title: '冷水坑溪山水系列',
-    desc: '探訪冷水坑溪',
-    component: Water20220602
+    desc: '夏令營科學城冷水坑溪流域',
+    component: Water20260728
   },
   {
-    id: 'water20221110',
-    img: `${imgBase}/img/2022-11-10/001.jpg`,
+    id: 'water20250503',
+    img: `${imgBase}/img/2025-05-03/001.jpg`,
     title: '冷水坑溪山水系列',
-    desc: '爺爺、奶奶暢遊冷水坑溪岸的靜心湖',
-    component: Water20221110
-  },
-  {
-    id: 'water20221211',
-    img: `${imgBase}/img/2022-12-11/level1/006.jpeg`,
-    title: '冷水坑溪山水系列',
-    desc: '冷水坑溪親子遊',
-    component: Water20221211
-  },
-  {
-    id: 'water20230506',
-    img: `${imgBase}/img/2023-05-06/001.jpg`,
-    title: '冷水坑溪山水系列',
-    desc: '冷水坑溪家庭大健走',
-    component: Water20230506
+    desc: '冷水坑溪賞荷會',
+    component: Water20250503
   },
   {
     id: 'water20240504',
@@ -82,11 +69,32 @@ const cards = [
     component: Water20240504
   },
   {
-    id: 'water20250503',
-    img: `${imgBase}/img/2025-05-03/001.jpg`,
+    id: 'water20230506',
+    img: `${imgBase}/img/2023-05-06/001.jpg`,
     title: '冷水坑溪山水系列',
-    desc: '冷水坑溪賞荷會',
-    component: Water20250503
+    desc: '冷水坑溪家庭大健走',
+    component: Water20230506
+  },
+  {
+    id: 'water20221211',
+    img: `${imgBase}/img/2022-12-11/level1/006.jpeg`,
+    title: '冷水坑溪山水系列',
+    desc: '冷水坑溪親子遊',
+    component: Water20221211
+  },
+ {
+    id: 'water20221110',
+    img: `${imgBase}/img/2022-11-10/001.jpg`,
+    title: '冷水坑溪山水系列',
+    desc: '爺爺、奶奶暢遊冷水坑溪岸的靜心湖',
+    component: Water20221110
+  },
+  {
+    id: 'water20220602',
+    img: `${imgBase}/img/2022-06-02/002.jpg`,
+    title: '冷水坑溪山水系列',
+    desc: '探訪冷水坑溪',
+    component: Water20220602
   },
 ]
 
