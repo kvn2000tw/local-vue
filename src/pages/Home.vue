@@ -11,7 +11,7 @@
 
 <script setup>
 
-import LayoutContainer from "@/components/LayoutContainer.vue";
+import LayoutContainer from "@/components/LayoutContainerMain.vue";
 import LocalKnowledge from "@/components/LocalKnowledge.vue";
 
 </script>
