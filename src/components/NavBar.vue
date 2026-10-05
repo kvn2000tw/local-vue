@@ -1,6 +1,10 @@
 <template>
   <nav class="nav">
-    <h1>{{ title }}</h1>
+    <h1 class="nav-title">
+      <!-- 直接使用文字 Emoji 圖示 -->
+      <span class="title-icon" aria-hidden="true">📖</span>
+      <span>{{ title }}</span>
+    </h1>
     <ul>
       <li v-for="(item, index) in menuItems" :key="index">
         <RouterLink :to="{ name: item.route }">{{ item.label }}</RouterLink>
@@ -43,10 +47,22 @@ const menuItems = [
   top: 0;
   z-index: 10;
 }
-.nav h1 {
+
+/* 讓圖示與文字水平對齊 */
+.nav-title {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 圖示與標題的間距 */
   font-size: 18px;
   margin: 6px 0;
 }
+
+/* 文字圖示大小與調校 */
+.title-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
 .nav ul {
   list-style: none;
   display: flex;
@@ -55,11 +71,13 @@ const menuItems = [
   margin: 0;
   flex-wrap: wrap;
 }
+
 .nav a {
   text-decoration: none;
   color: white;
   font-weight: 600;
 }
+
 .nav a:hover {
   text-decoration: underline;
   color: #f0f0f0;

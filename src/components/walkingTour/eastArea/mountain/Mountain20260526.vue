@@ -8,18 +8,22 @@
     <section>
       <h2>防空洞步道</h2>
       <table>
-        <tr>
-          <th>盤點</th>
-          <th>圖片</th>
-          <th>缺失</th>
-        </tr>
-        <tr v-for="item in bunkerSection" :key="item.id">
-          <td>{{ item.name }}</td>
-          <td>
-            <img v-for="(img, index) in item.imgs" :key="index" :src="img" alt="防空洞圖片" />
-          </td>
-          <td>{{ item.issue }}</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>盤點</th>
+            <th>圖片</th>
+            <th>缺失</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in bunkerSection" :key="item.id">
+            <td>{{ item.name }}</td>
+            <td>
+              <img v-for="(img, index) in item.imgs" :key="index" :src="img" alt="防空洞圖片" />
+            </td>
+            <td>{{ item.issue }}</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
@@ -27,23 +31,27 @@
     <section>
       <h2>往上的山路路徑</h2>
       <table>
-        <tr>
-          <th>盤點</th>
-          <th>圖片</th>
-          <th>缺失</th>
-        </tr>
-        <tr v-for="item in pathSection" :key="item.id">
-          <td>{{ item.name }}</td>
-          <td>
-            <figure v-for="(group, gIndex) in item.imgs" :key="gIndex" style="display:inline-block; margin:6px;">
-              <figcaption v-html="item.title[gIndex]"></figcaption>
-              <div>
-                <img v-for="(img, index) in group" :key="index" :src="img" :alt="`圖片${index+1}`" />
-              </div>
-            </figure>
-          </td>
-          <td>{{ item.issue }}</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>盤點</th>
+            <th>圖片</th>
+            <th>缺失</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in pathSection" :key="item.id">
+            <td>{{ item.name }}</td>
+            <td>
+              <figure v-for="(group, gIndex) in item.imgs" :key="gIndex" style="display:inline-block; margin:6px;">
+                <figcaption v-html="item.title[gIndex]"></figcaption>
+                <div>
+                  <img v-for="(img, index) in group" :key="index" :src="img" :alt="`圖片${index+1}`" />
+                </div>
+              </figure>
+            </td>
+            <td>{{ item.issue }}</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
@@ -51,23 +59,27 @@
     <section>
       <h2>中途涼亭<br>(編號20飲水機)</h2>
       <table>
-        <tr>
-          <th>盤點</th>
-          <th>圖片</th>
-          <th>缺失</th>
-        </tr>
-        <tr v-for="item in pavilion" :key="item.id">
-          <td>{{ item.name }}</td>
-          <td>
-            <figure v-for="(group, gIndex) in item.imgs" :key="gIndex" style="display:inline-block; margin:6px;">
-              <figcaption v-html="item.title[gIndex]"></figcaption>
-              <div>
-                <img v-for="(img, index) in group" :key="index" :src="img" :alt="`圖片${index+1}`" />
-              </div>
-            </figure>
-          </td>
-          <td>{{ item.issue }}</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>盤點</th>
+            <th>圖片</th>
+            <th>缺失</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in pavilion" :key="item.id">
+            <td>{{ item.name }}</td>
+            <td>
+              <figure v-for="(group, gIndex) in item.imgs" :key="gIndex" style="display:inline-block; margin:6px;">
+                <figcaption v-html="item.title[gIndex]"></figcaption>
+                <div>
+                  <img v-for="(img, index) in group" :key="index" :src="img" :alt="`圖片${index+1}`" />
+                </div>
+              </figure>
+            </td>
+            <td>{{ item.issue }}</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
@@ -82,7 +94,8 @@
 <script setup>
 import { getCurrentInstance } from 'vue'
 
-const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.apiUrl
+const instance = getCurrentInstance()
+const imgBase = instance?.appContext.config.globalProperties.$env?.apiUrl || ''
 
 const bunkerSection = [
   { id: 1, name: "八個防空洞 (北118-07-北118-14)", issue: "洞內黑暗，雨天後會有積水", imgs: [`${imgBase}/img/2026-05-26/002.jpg`] },
@@ -136,7 +149,7 @@ img {
 
 /* 響應式：手機版改成卡片式 */
 @media (max-width: 768px) {
-  table, tr, td, th {
+  table, tr, td, th, thead, tbody {
     display: block;
     width: 100%;
   }
@@ -147,7 +160,7 @@ img {
     border-radius: 6px;
     background: #f9f9f9;
   }
-  th {
+  thead {
     display: none; /* 隱藏表頭 */
   }
   td {

@@ -20,9 +20,9 @@
     </div>
 
     <!-- 動態切換組件 -->
-   <transition name="fade" mode="out-in">
-  <component :is="activeComponent" class="panel" />
-</transition>
+    <transition name="fade" mode="out-in">
+      <component :is="activeComponent" class="panel" />
+    </transition>
   </div>
 </template>
 
@@ -87,31 +87,33 @@ onMounted(() => {
   gap: 12px;
 }
 
-/* ✅ 改為 main-btn */
+/* 🎯 每個按鈕各自加上明顯的框框 */
 .main-btn {
   padding: 18px 16px;
   font-size: 18px;
   font-weight: 700;
   border-radius: 20px;
-  border: 2px solid var(--border);
+  border: 2px solid #3a7c5b; /* 未選取時：每個按鈕都有清晰的綠色框框 */
   background: #fff;
+  color: #3a7c5b;
   cursor: pointer;
   transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease, color 0.2s ease;
   outline: none;
 }
 .main-btn:hover {
   transform: translateY(-1px);
+  background: #f0fdf4; /* 滑鼠懸停時輕微背景反饋 */
 }
 .main-btn.selected {
-  background: #3a7c5b;
-  border-color: var(--primary);
-  color: #fff; /* ✅ 讓字變白色 */
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+  background: #3a7c5b; /* 選取時：填滿綠色 */
+  border-color: #3a7c5b;
+  color: #fff; /* 文字變白色 */
+  box-shadow: 0 6px 16px rgba(58, 124, 91, 0.25);
 }
 .main-btn:focus-visible {
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
-  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(58, 124, 91, 0.25);
+  border-color: #3a7c5b;
 }
 
 .panel {
@@ -131,6 +133,4 @@ onMounted(() => {
     padding: 16px;
   }
 }
-
-
 </style>
