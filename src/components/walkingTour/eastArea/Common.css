@@ -18,6 +18,12 @@
     border: 2px solid #ccc;
 }
 
+/* 當螢幕寬度小於 768px 時（如平板直立或手機）：自動變成一張一張呈現 */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr; /* 切換為單欄（一次一張） */
+  }
+}
 h2 {
     color: #333;
     margin-top: 20px;
