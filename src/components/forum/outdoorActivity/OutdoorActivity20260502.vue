@@ -1,8 +1,10 @@
 <template>
   <div class="page-container">
-
     <!-- 第三部分：永恆的康乃馨 母親節音樂會 -->
     <section class="content-section">
+      <div class="poster-container">
+        <img :src="images.poster" alt="永恆的康乃馨 母親節音樂會海報" class="poster-img" />
+      </div>
       <header class="section-header">
         <p class="section-meta">新竹市科學城社區大學115年春48學期公論週 第六場次</p>
         <h2 class="section-heading rose">「永恆的康乃馨 母親節音樂會」 — 專文報導</h2>
@@ -36,12 +38,14 @@
       <div class="single-img-container">
         <img :src="images.beach1" alt="永恆的康乃馨 母親節音樂會" class="contain-img" />
       </div>
-      <!-- 圖片展區 1：使用 v-for 迴圈產生圖片，透過 RWD 達成手機上一次顯示一張、大螢幕左右排 -->
+
+      <!-- 圖片展區 1：使用 v-for 迴圈產生圖片，透過 RWD 達成手機上一次顯示一張、大螢幕左右排，且維持等比例原圖呈現 -->
       <div v-for="(group, index) in beachImageGroups" :key="index" class="custom-grid">
         <div v-for="(img, imgIndex) in group" :key="imgIndex" class="grid-img-wrapper">
           <img :src="img.url" :alt="img.alt" class="grid-img" />
         </div>
       </div>
+
       <!-- 單張完整圖片展示 -->
       <div class="single-img-container">
         <img :src="images.beach10" alt="永恆的康乃馨 母親節音樂會" class="contain-img" />
@@ -68,10 +72,10 @@ const images = reactive({
   beach8: `${imgBase}/img/2026-05-02/008.jpg`,
   beach9: `${imgBase}/img/2026-05-02/009.jpg`,
   beach10: `${imgBase}/img/2026-05-02/010.jpg`,
-  
+  poster: `${imgBase}/img/2026-05-02/poster.jpg`
 })
 
-// 將淨灘圖片組裝成雙張一組的陣列，以便使用 v-for 迴圈進行 RWD 自適應呈現
+// 將圖片組裝成雙張一組的陣列，以便使用 v-for 迴圈進行 RWD 自適應呈現
 const beachImageGroups = computed(() => [
   [
     { url: images.beach2, alt: '永恆的康乃馨 母親節音樂會合照 1' },
@@ -93,7 +97,29 @@ const beachImageGroups = computed(() => [
 </script>
 
 <style scoped>
-/* 自定義 RWD 網格樣式：手機小尺寸 (預設) 時為 1 欄（一次顯示一張），在大於等於 768px 時變為 2 欄左右排 */
+/* 海報原圖完整呈現容器（不裁切、保持原始比例） */
+.poster-container {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.poster-img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* 自定義 RWD 網格樣式：手機小尺寸時為 1 欄，平板與大螢幕時變為 2 欄左右排 */
 .custom-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -107,26 +133,29 @@ const beachImageGroups = computed(() => [
   }
 }
 
-/* 圖片外層容器：限制高寬、避免變形與小螢幕被擠壓壓縮 */
+/* 圖片外層容器：改為 auto 高度並使用 max-height，讓小尺寸下圖片能按比例完整呈現而不被強制裁切 */
 .grid-img-wrapper {
   width: 100%;
-  height: 16rem;
+  max-height: 28rem;
   overflow: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   background-color: #f3f4f6;
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 28rem;
+  object-fit: contain;
   object-position: center;
   display: block;
 }
 
-/* 海報等完整顯示容器（使用 contain 避免裁切重要文字與資訊） */
+/* 單張完整顯示容器（使用 contain 避免裁切重要內容） */
 .single-img-container {
   width: 100%;
   max-height: 32rem;
@@ -142,7 +171,8 @@ const beachImageGroups = computed(() => [
 
 .contain-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 32rem;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -200,6 +230,7 @@ const beachImageGroups = computed(() => [
 .section-header {
   border-bottom: 1px solid #e5e7eb;
   padding-bottom: 0.75rem;
+  text-align: center; /* 已改為置中 */
 }
 
 .section-meta {

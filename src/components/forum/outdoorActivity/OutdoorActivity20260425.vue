@@ -2,6 +2,11 @@
   <div class="page-container">
     <!-- 第一部分：425一起淨灘·南港守護行動 -->
     <section class="content-section">
+      <!-- 單張完整圖片展示（海報） -->
+      <div class="poster-container">
+        <img :src="images.poster" alt="淨灘活動海報" class="poster-img" />
+      </div>
+
       <h1 class="section-title">
         科學城社大「425一起淨灘，南港守護行動」世界地球日
       </h1>
@@ -33,23 +38,23 @@
         </p>
       </div>
 
-      <!-- 單張完整圖片展示 -->
+      <!-- 單張完整圖片展示（第一張圖） -->
       <div class="single-img-container">
         <img :src="images.beach1" alt="淨灘活動" class="contain-img" />
       </div>
 
-      <!-- 圖片展區 1：使用 v-for 迴圈產生圖片，透過 RWD 達成手機上一次顯示一張、大螢幕左右排 -->
+      <!-- 圖片展區 1：使用 v-for 迴圈產生圖片，透過 RWD 達成手機上一次顯示一張、大螢幕左右排，且維持等比例原圖呈現 -->
       <div v-for="(group, index) in beachImageGroups" :key="index" class="custom-grid">
         <div v-for="(img, imgIndex) in group" :key="imgIndex" class="grid-img-wrapper">
           <img :src="img.url" :alt="img.alt" class="grid-img" />
         </div>
       </div>
-      <!-- 單張完整圖片展示 -->
+
+      <!-- 單張完整圖片展示（最後一張圖） -->
       <div class="single-img-container">
-        <img :src="images.beach16" alt="淨灘活動海報" class="contain-img" />
+        <img :src="images.beach16" alt="淨灘活動花絮" class="contain-img" />
       </div>
     </section>
-
   </div>
 </template>
 
@@ -78,10 +83,7 @@ const images = reactive({
   beach15: `${imgBase}/img/2026-04-25/015.jpg`,
   beach16: `${imgBase}/img/2026-04-25/016.jpg`,
 
-  table1: `${imgBase}/img/sustainable_table_1.jpg`,
-  table2: `${imgBase}/img/sustainable_table_2.jpg`,
-  concert1: `${imgBase}/img/concert_1.jpg`,
-  concert2: `${imgBase}/img/concert_2.jpg`
+  poster: `${imgBase}/img/2026-04-25/poster.jpg`,
 })
 
 // 將淨灘圖片組裝成雙張一組的陣列，以便使用 v-for 迴圈進行 RWD 自適應呈現
@@ -118,7 +120,29 @@ const beachImageGroups = computed(() => [
 </script>
 
 <style scoped>
-/* 自定義 RWD 網格樣式：手機小尺寸 (預設) 時為 1 欄（一次顯示一張），在大於等於 768px 時變為 2 欄左右排 */
+/* 海報原圖完整呈現容器（不裁切、保持原始比例） */
+.poster-container {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.poster-img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* 自定義 RWD 網格樣式：手機小尺寸時為 1 欄，平板與大螢幕時變為 2 欄左右排 */
 .custom-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -132,26 +156,29 @@ const beachImageGroups = computed(() => [
   }
 }
 
-/* 圖片外層容器：限制高寬、避免變形與小螢幕被擠壓壓縮 */
+/* 圖片外層容器：改為 auto 高度並使用 max-height，讓小尺寸下圖片能按比例完整呈現而不被強制裁切 */
 .grid-img-wrapper {
   width: 100%;
-  height: 16rem;
+  max-height: 28rem;
   overflow: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   background-color: #f3f4f6;
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 28rem;
+  object-fit: contain;
   object-position: center;
   display: block;
 }
 
-/* 海報等完整顯示容器（使用 contain 避免裁切重要文字與資訊） */
+/* 單張完整顯示容器（使用 contain 避免裁切重要內容） */
 .single-img-container {
   width: 100%;
   max-height: 32rem;
@@ -167,7 +194,8 @@ const beachImageGroups = computed(() => [
 
 .contain-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 32rem;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -220,52 +248,5 @@ const beachImageGroups = computed(() => [
   gap: 1rem;
   text-align: justify;
   line-height: 1.75;
-}
-
-.section-header {
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 0.75rem;
-}
-
-.section-meta {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #6b7280;
-  font-weight: 500;
-}
-
-.section-heading {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-  margin-top: 0.25rem;
-}
-
-.section-heading.green {
-  color: #166534;
-}
-
-.section-heading.rose {
-  color: #be123c;
-}
-
-.text-justify {
-  text-align: justify;
-  line-height: 1.75;
-}
-
-.sub-heading {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  margin-top: 1rem;
-}
-
-.sub-heading.green {
-  color: #15803d;
-}
-
-.space-y-4 > * + * {
-  margin-top: 1rem;
 }
 </style>

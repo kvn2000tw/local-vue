@@ -22,7 +22,7 @@
         <h3 class="sub-heading green">二、六大綠食宣言：守護環境與健康的核心原則</h3>
         <p class="text-justify">
           何理事長重點介紹「綠食宣言」六大原則，包括：優先採購有機友善食材、採用當地當令食材、遵循永續生態與海洋原則、減少添加物、提供蔬食選項，以及降低資源耗損與浪費。何理事長進一步說明，農藥與化肥會破壞土壤微生物平衡，形成惡性循環；而選擇在地食材可大幅降低食物碳足跡，甚至每日可減少大量溫室氣體排放。她也提醒民眾關注海洋資源永續，避免食用保育類物種，並參考台灣海鮮選擇指南，支持友善漁業。
-          何理事長指出畜牧業碳排放遠高於植物性飲食，鼓勵民眾增加蔬食比例，例如以黃豆補充蛋白質，不僅有益健康，也能減少環境負擔.講師強調，「綠食宣言」並非強制規範，而是建立在信任基礎上的共同承諾，透過消費者選擇，成為推動餐廳改變的重要力量，何理事長也鼓勵民眾認明懸掛「綠食宣言旗」的店家，支持那些願意公開透明食材來源、對環境與消費者負責的綠色餐廳。
+          何理事長指出畜牧業碳排放遠高於植物性飲食，鼓勵民眾增加蔬食比例，例如以黃豆補充蛋白質，不僅有益健康，也能減少環境負擔。講師強調，「綠食宣言」並非強制規範，而是建立在信任基礎上的共同承諾，透過消費者選擇，成為推動餐廳改變的重要力量，何理事長也鼓勵民眾認明懸掛「綠食宣言旗」的店家，支持那些願意公開透明食材來源、對環境與消費者負責的綠色餐廳。
         </p>
 
         <h3 class="sub-heading green">三、從生活實踐：發酵與手作的永續智慧</h3>
@@ -39,7 +39,8 @@
       <div class="single-img-container">
         <img :src="images.beach1" alt="永續餐桌的實踐" class="contain-img" />
       </div>
-     <!-- 圖片展區 1：使用 v-for 迴圈產生圖片，透過 RWD 達成手機上一次顯示一張、大螢幕左右排 -->
+
+      <!-- 圖片展區 1：使用 v-for 迴圈產生圖片，透過 RWD 達成手機上一次顯示一張、大螢幕左右排，且維持等比例原圖呈現 -->
       <div v-for="(group, index) in beachImageGroups" :key="index" class="custom-grid">
         <div v-for="(img, imgIndex) in group" :key="imgIndex" class="grid-img-wrapper">
           <img :src="img.url" :alt="img.alt" class="grid-img" />
@@ -65,10 +66,9 @@ const images = reactive({
   beach5: `${imgBase}/img/2026-04-29/005.jpg`,
   beach6: `${imgBase}/img/2026-04-29/006.jpg`,
   beach7: `${imgBase}/img/2026-04-29/007.jpg`,
-
 })
 
-// 將淨灘圖片組裝成雙張一組的陣列，以便使用 v-for 迴圈進行 RWD 自適應呈現
+// 將圖片組裝成雙張一組的陣列，以便使用 v-for 迴圈進行 RWD 自適應呈現
 const beachImageGroups = computed(() => [
   [
     { url: images.beach2, alt: '永續餐桌的實踐 1' },
@@ -86,7 +86,7 @@ const beachImageGroups = computed(() => [
 </script>
 
 <style scoped>
-/* 自定義 RWD 網格樣式：手機小尺寸 (預設) 時為 1 欄（一次顯示一張），在大於等於 768px 時變為 2 欄左右排 */
+/* 自定義 RWD 網格樣式：手機小尺寸時為 1 欄，平板與大螢幕時變為 2 欄左右排 */
 .custom-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -100,26 +100,29 @@ const beachImageGroups = computed(() => [
   }
 }
 
-/* 圖片外層容器：限制高寬、避免變形與小螢幕被擠壓壓縮 */
+/* 圖片外層容器：改為 auto 高度並使用 max-height，讓小尺寸下圖片能按比例完整呈現而不被強制裁切 */
 .grid-img-wrapper {
   width: 100%;
-  height: 16rem;
+  max-height: 28rem;
   overflow: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   background-color: #f3f4f6;
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 28rem;
+  object-fit: contain;
   object-position: center;
   display: block;
 }
 
-/* 海報等完整顯示容器（使用 contain 避免裁切重要文字與資訊） */
+/* 單張完整顯示容器（使用 contain 避免裁切重要內容） */
 .single-img-container {
   width: 100%;
   max-height: 32rem;
@@ -135,7 +138,8 @@ const beachImageGroups = computed(() => [
 
 .contain-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 32rem;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -193,6 +197,7 @@ const beachImageGroups = computed(() => [
 .section-header {
   border-bottom: 1px solid #e5e7eb;
   padding-bottom: 0.75rem;
+  text-align: center; /* 已改為置中 */
 }
 
 .section-meta {

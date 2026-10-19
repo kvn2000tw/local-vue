@@ -45,14 +45,14 @@ function goBack() {
 const cards = [
   {
     id: 'outdoor_activity20260425',
-    img: `${imgBase}/img/2026-05-26/001.jpg`,
+    img: `${imgBase}/img/2026-04-25/001.jpg`,
     title: '一起淨灘，南港守護行動',
     desc: '',
     component: OutdoorActivity20260425
   },
   {
     id: 'outdoor_activity20260502',
-    img: `${imgBase}/img/2026-05-26/001.jpg`,
+    img: `${imgBase}/img/2026-05-02/001.jpg`,
     title: '永恆的康乃馨 母親節音樂會',
     desc: '',
     component: OutdoorActivity20260502
