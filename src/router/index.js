@@ -7,6 +7,7 @@ import ExperienceSharing from '@/pages/ExperienceSharing.vue'
 import WalkingTour from '@/pages/WalkingTour.vue'
 import LocalRevitalization from '@/pages/LocalRevitalization.vue'
 import LocalEcology from '@/pages/LocalEcology.vue'
+import LocalForum from '@/pages/LocalForum.vue'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
@@ -15,6 +16,7 @@ const routes = [
   { path: '/walking-tour', name: 'walking', component: WalkingTour },
   { path: '/local-revitalization', name: 'revitalization', component: LocalRevitalization },
   { path: '/local-ecology', name: 'ecology', component: LocalEcology },
+  { path: '/local-forum', name: 'forum', component: LocalForum },
   
 ]
 

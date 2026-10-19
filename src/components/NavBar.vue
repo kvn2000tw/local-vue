@@ -30,7 +30,8 @@ const menuItems = [
   { label: '經驗觀點', route: 'experience' },
   { label: '走讀新竹', route: 'walking' },
   { label: '地方創生', route: 'revitalization' },
-  { label: '在地生態', route: 'ecology' }
+  { label: '在地生態', route: 'ecology' },
+  { label: '公論週活動', route: 'forum' }
 ]
 </script>
 

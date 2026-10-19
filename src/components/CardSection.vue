@@ -24,7 +24,8 @@ const cards = [
   { id: 'wisdom', title: '經驗觀點', desc: '教師分享、活動分享、學員分享。', route: 'experience' },
   { id: 'language', title: '走讀新竹', desc: '山林系列、水資源系列。', route: 'walking' },
   { id: 'nature', title: '地方創生', desc: '優良店家採訪', route: 'revitalization' },
-  { id: 'community', title: '在地生態', desc: '濕地保育、溪流河域。', route: 'ecology' }
+  { id: 'community', title: '在地生態', desc: '濕地保育、溪流河域。', route: 'ecology' },
+  { id: 'forum', title: '公論週活動', desc: '講座論壇、公民參與、議題研討。', route: 'forum' }
 ]
 
 // 導航方法
@@ -36,9 +37,27 @@ const go = (routeName) => {
 <style scoped>
 .section-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   padding: 40px 20px;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* 預設（手機版）：自動換行 */
+.section-container {
+  flex-wrap: wrap; 
+}
+
+/* 桌機版（螢幕寬度 >= 768px 時）：不換行、可橫向捲動 */
+@media (min-width: 768px) {
+  .section-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start; /* 桌機靠左或置中皆可 */
+  }
+  
+  .card {
+    flex-shrink: 0; /* 確保桌機不換行時，卡片不會被擠壓變形 */
+  }
 }
 
 .card {
@@ -47,7 +66,7 @@ const go = (routeName) => {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 150px;
-  margin: 15px;
+  margin: 0; /* 用 gap 取代 margin 較整齊 */
   padding: 15px;
   text-align: center;
   cursor: pointer;
