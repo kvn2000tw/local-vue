@@ -37,7 +37,10 @@ const imgBase = getCurrentInstance().appContext.config.globalProperties.$env.api
 // 匯入各個子元件
 import OutdoorActivity20260425 from './OutdoorActivity20260425.vue'
 import OutdoorActivity20260502 from './OutdoorActivity20260502.vue'
-
+import Mountain20251101 from './Mountain20251101.vue'
+import Water20230506 from './Water20230506.vue'
+import Water20240504 from './Water20240504.vue'
+import Water20250503 from './Water20250503.vue'
 function goBack() {
   selected.value = null;
 }
@@ -56,6 +59,34 @@ const cards = [
     title: '永恆的康乃馨 母親節音樂會',
     desc: '',
     component: OutdoorActivity20260502
+  },
+  {
+    id: 'mountain20251101',
+    img: `${imgBase}/img/2025-11-01/001.JPG`,
+    title: '十八尖山防空洞巡禮',
+    desc: '',
+    component: Mountain20251101
+  },
+  {
+    id: 'water20250503',
+    img: `${imgBase}/img/2025-05-03/001.jpg`,
+    title: '冷水坑溪賞荷會',
+    desc: '',
+    component: Water20250503
+  },
+  {
+    id: 'water20240504',
+    img: `${imgBase}/img/2024-05-04/006.jpg`,
+    title: '走訪冷水坑溪寺廟之旅',
+    desc: '',
+    component: Water20240504
+  },
+  {
+    id: 'water20230506',
+    img: `${imgBase}/img/2023-05-06/001.jpg`,
+    title: '冷水坑溪家庭大健走',
+    desc: '',
+    component: Water20230506
   },
 ]
 
